@@ -17,6 +17,9 @@ $(function() {
                 img_src:"img/walle.jpg"//展示的图片
             }
         ],
-        controlNavThumbs:false
+        css:{
+            width:"1000px",
+            height:"500px"
+        }
     });
 });

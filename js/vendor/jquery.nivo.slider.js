@@ -209,7 +209,7 @@
         
         // Add slices for slice animations
         var createSlices = function(slider, settings, vars) {
-        	if($(vars.currentImage).parent().is('a')) $(vars.currentImage).parent().css('display','block');
+            if($(vars.currentImage).parent().is('a')) $(vars.currentImage).parent().css('display','block');
             $('img[src="'+ vars.currentImage.attr('src') +'"]', slider).not('.nivo-main-image,.nivo-control img').width(slider.width()).css('visibility', 'hidden').show();
             var sliceHeight = ($('img[src="'+ vars.currentImage.attr('src') +'"]', slider).not('.nivo-main-image,.nivo-control img').parent().is('a')) ? $('img[src="'+ vars.currentImage.attr('src') +'"]', slider).not('.nivo-main-image,.nivo-control img').parent().height() : $('img[src="'+ vars.currentImage.attr('src') +'"]', slider).not('.nivo-main-image,.nivo-control img').height();
 
@@ -247,7 +247,7 @@
         
         // Add boxes for box animations
         var createBoxes = function(slider, settings, vars){
-        	if($(vars.currentImage).parent().is('a')) $(vars.currentImage).parent().css('display','block');
+            if($(vars.currentImage).parent().is('a')) $(vars.currentImage).parent().css('display','block');
             $('img[src="'+ vars.currentImage.attr('src') +'"]', slider).not('.nivo-main-image,.nivo-control img').width(slider.width()).css('visibility', 'hidden').show();
             var boxWidth = Math.round(slider.width()/settings.boxCols),
                 boxHeight = Math.round($('img[src="'+ vars.currentImage.attr('src') +'"]', slider).not('.nivo-main-image,.nivo-control img').height() / settings.boxRows);
@@ -631,16 +631,16 @@
                 ;
             for(i=0;item = data[i];i+=1){
                 itemImgHTML = '<img src="'+item.img_src+'" data-thumb="'+(item.data_thumb?item.data_thumb:item.img_src)+'" alt="'+(item.img_alt?item.img_alt:"")+'" title="'+(item.title?item.title:"")+'" />';
-                console.log(innerHTML);
                 if (item.a_href) {
                     innerHTML+='<a href="'+item.a_href+'">'+itemImgHTML+'</a>'
                 }else{
                     innerHTML+=itemImgHTML;
                 }
             }
-            console.log(data)
-            this.html(innerHTML);
-        };
+        }
+        if (options.css) {
+            this.parent().css(options.css)
+        }
         return this.each(function(key, value){
             var element = $(this);
             // Return early if this element already has a plugin instance
