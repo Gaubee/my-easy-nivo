@@ -637,6 +637,7 @@
                     innerHTML+=itemImgHTML;
                 }
             }
+            this.html(innerHTML);
         }else{
             i = this.find("img").length;
         }
