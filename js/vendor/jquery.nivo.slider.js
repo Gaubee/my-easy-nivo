@@ -637,11 +637,14 @@
                     innerHTML+=itemImgHTML;
                 }
             }
+        }else{
+            i = this.find("img").length;
         }
+        var sliderWrapper = this.parent();
         if (options.css) {
-            this.parent().css(options.css)
+            sliderWrapper.css(options.css)
         }
-        return this.each(function(key, value){
+        var result = this.each(function(key, value){
             var element = $(this);
             // Return early if this element already has a plugin instance
             if (element.data('nivoslider')) { return element.data('nivoslider'); }
@@ -650,6 +653,8 @@
             // Store plugin object in this element's data
             element.data('nivoslider', nivoslider);
         });
+        sliderWrapper.find(".nivo-controlNav").width(i*28+"px");
+        return result;
     };
     
     //Default settings
