@@ -643,6 +643,7 @@
         }
         var sliderWrapper = this.parent();
         if (options.css) {
+
             sliderWrapper.css(options.css)
         }
         var result = this.each(function(key, value){

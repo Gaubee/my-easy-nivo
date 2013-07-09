@@ -19,7 +19,7 @@ $(function() {
         ],
         css:{
             width:"1000px",
-            height:"500px"
+            height:"500px !important"
         }
     });
 });
